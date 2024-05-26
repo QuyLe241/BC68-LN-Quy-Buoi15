@@ -1,10 +1,10 @@
 function manageAdmission() {
-    var e = document.getElementById("inputScore1").value
-      , n = Number(document.getElementById("selLocation").value)
-      , t = Number(document.getElementById("selUser").value)
-      , u = Number(document.getElementById("inputScore2").value)
-      , c = Number(document.getElementById("inputScore3").value)
-      , l = Number(document.getElementById("inputScore4").value)
+    var e = document.getElementById("input1").value
+      , n = Number(document.getElementById("vaLue").value)
+      , t = Number(document.getElementById("user").value)
+      , u = Number(document.getElementById("input2").value)
+      , c = Number(document.getElementById("input3").value)
+      , l = Number(document.getElementById("input4").value)
       , m = !0;
     if (m &= checkScore(u) && checkScore(c) && checkScore(l)) {
         var o = u + c + l + (n + t);
@@ -12,9 +12,13 @@ function manageAdmission() {
     } else
         document.getElementById("txtResult").innerHTML = "Bạn đã rớt. Do có điểm nhỏ hơn hoặc bằng 0"
 }
+
+
 function checkScore(e) {
     return !(e <= 0)
 }
+
+
 function calcElecBill() {
     var e = document.getElementById("inputName").value
       , n = Number(document.getElementById("inputKW").value)
@@ -23,6 +27,8 @@ function calcElecBill() {
     t = new Intl.NumberFormat("vn-VN").format(t),
     document.getElementById("txtElecBill").innerHTML = "Họ tên: " + e + "; Tiền điện: " + t
 }
+
+
 function calcTax() {
     var e = document.getElementById("inputName2").value
       , n = document.getElementById("inputSalary").value - 4e6 - 16e5 * document.getElementById("inputUser").value
@@ -31,10 +37,14 @@ function calcTax() {
     t = new Intl.NumberFormat("vn-VN").format(t),
     document.getElementById("txtTax").innerHTML = "Họ tên: " + e + "; Tiền thuế thu nhập cá nhân: " + t + " VND"
 }
+
+
 function disableInput() {
     var e = document.getElementById("selCustomer").value;
     document.getElementById("inputConnect").style.display = "company" == e ? "block" : "none"
 }
+
+
 function tinhTienCap() {
     var e = document.getElementById("selCustomer").value
       , n = document.getElementById("inputID").value
@@ -47,17 +57,23 @@ function tinhTienCap() {
         currency: "USD"
     }).format(c)
 }
+
+
 function tinhTong(e, n, t, u, c, l) {
     var m = e + n + t * u;
     return c > 10 && (m += (c - 10) * l),
     m
 }
+
+
 document.addEventListener("contextmenu", function(e) {
     e.preventDefault()
 }, !1),
 document.onkeydown = function(e) {
     return 123 != (e = e || window.event).keyCode && (!e.ctrlKey || !e.shiftKey || 73 != e.keyCode) && void 0
 }
+
+
 ,
 document.getElementById("btnResult").onclick = manageAdmission;
 const kw_1 = 500
