@@ -51,6 +51,12 @@ function tinhTienCap() {
       , t = document.getElementById("inputChanel").value
       , u = document.getElementById("inputConnect").value
       , c = 0;
+    if(inputChanel == 0){
+        alert('Vui lòng nhập đầy đủ thông tin')
+        return btnNet;
+
+    }
+
     "company" == e ? c = tinhTong(15, 75, 50, t, u, 5) : "user" == e ? c = tinhTong(4.5, 20.5, 7.5, t, 0, 0) : alert("Hãy chọn loại khách hàng"),
     document.getElementById("txtNet").innerHTML = "Mã khách hàng: " + n + "; Tiền cáp: " + new Intl.NumberFormat("en-US",{
         style: "currency",
@@ -69,6 +75,7 @@ function tinhTong(e, n, t, u, c, l) {
 document.addEventListener("contextmenu", function(e) {
     e.preventDefault()
 }, !1),
+
 document.onkeydown = function(e) {
     return 123 != (e = e || window.event).keyCode && (!e.ctrlKey || !e.shiftKey || 73 != e.keyCode) && void 0
 }
