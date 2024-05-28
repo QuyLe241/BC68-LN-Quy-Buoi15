@@ -51,9 +51,9 @@ function tinhTienCap() {
       , t = document.getElementById("inputChanel").value
       , u = document.getElementById("inputConnect").value
       , c = 0;
-    if(inputChanel == 0){
-        alert('Vui lòng nhập đầy đủ thông tin')
-        return btnNet;
+    if(t == 0){
+        alert('Vui lòng nhập đầy đủ thông tin');
+        return txtNet;
 
     }
 
